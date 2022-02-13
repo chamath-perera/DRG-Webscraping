@@ -23,7 +23,7 @@ Tx_title <- read_html("https://www.cancertherapyadvisor.com/home/cancer-treatmen
 
 Tx_title
 
-#Function to construct the URL that will be used to scrape information. 
+#Example function to construct the URL that will be used to scrape information. 
 runURL <- function(regimens = 1:4){
   
   url = "https://www.cancertherapyadvisor.com/home/cancer-topics"
