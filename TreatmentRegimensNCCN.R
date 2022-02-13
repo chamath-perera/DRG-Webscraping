@@ -1,6 +1,10 @@
-#' Title: Web scraping NCCN Treatments 
-#' Developer: Chamath Perera
+#' Title: Web scraping NCCN Treatments R Script
+#' Developer: CP
 #' Date:12/02/2022
+
+#'Description: This script will be the back end of the web application that will 
+#'display NCCN recommended regimens for different cancer indications. The app 
+#'will scrape information from the National Cancer Comprehensive Network. 
 
 library(rvest)
 library(readr)

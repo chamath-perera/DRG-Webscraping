@@ -1,6 +1,6 @@
 #'Title: NCCN Shiny App 
 #'Developer: CP
-#'Date: 13.02.2022 
+#'Date: 13.02.2022
 
 #'Description: This app will create a user-friendly UI to display NCCN recommended 
 #'regimens for different cacner indications. The app will scrape information from
