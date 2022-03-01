@@ -1,5 +1,10 @@
 
 # %%
+#' Title: DRG-Webscraping
+#' Developer: CP
+#' Version: 0_1
+
+
 #Load required libraries
 import webbrowser
 import pandas as pd
@@ -30,19 +35,32 @@ df = pd.DataFrame(data)
 #Print the table in the output
 df
 
-cost = []
+code = []
+FCP = []
+FOP = []
 
 #Webscraping commences 
 for url in urls[:]:
     page = requests.get(url).text
     soup = BeautifulSoup(page, 'html.parser')
-    cost.append(soup.find_all("table")[14].get_text())
+    name = soup.find('blockquote')
+    name.br.extract()
+    code.append(name.text[1:-213])
+    FCP.append(soup.find(id="drg_t_op_pmt").getText())
+    FOP.append(soup.find(id="drg_t_cp_pmt").getText())
 
-df["costs"] = cost
+FCP = [item.strip() for item in FCP]
+FOP = [item.strip() for item in FOP]
+
+df["DRG Codes"] = code
+df["Federal Capital Payment"] = FCP
+df["Federal Operating Payment"] = FOP
 
 df
 
 #Open the webpage from the URL that has been generated in the build_url function. 
-for url in urls[:]:
-   webbrowser.open(url,1)
+#for url in urls[:]:
+    #webbrowser.open(url,1)
 
+
+# %%
