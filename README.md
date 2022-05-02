@@ -13,4 +13,4 @@ Run the Webscraping_fn.py script to run the function.
 webscrape_DRG("453","570","946","947", "642", "543", "948")
 
 ```
-The table will output the costs for each DRG code in a table format. Like the one below. 
+
