@@ -39,7 +39,7 @@ code = []
 FCP = []
 FOP = []
 
-#Webscraping commences 
+#Webscraping begings for the specified URLs
 for url in urls[:]:
     page = requests.get(url).text
     soup = BeautifulSoup(page, 'html.parser')
