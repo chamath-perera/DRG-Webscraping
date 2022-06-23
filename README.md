@@ -3,11 +3,7 @@ DRG-Webscraping
 
 ### Simple python script to scrape costs from Find-A-Code.
 
-<<<<<<< HEAD
 The script takes a list of DRG codes and webscrapes them one by one and returns their costs. This allows the user to avoid spending time scrolling through various web pages to find costs when this is automated and returned as a table.
-=======
-The script takes a list of DRG codes and webscrapes them one by one and returns their costs. This allows the user to avoid spending time scrolling through various web pages to find costs as this is automated and returned as a table. 
->>>>>>> bea5894ee7c13fcc2278dc4511fc3f5860b4e19b
 
 Run the Webscraping_fn.py script to run the function. 
 
