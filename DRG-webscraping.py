@@ -9,6 +9,7 @@
 import webbrowser
 import pandas as pd
 import requests
+import re
 from bs4 import BeautifulSoup
 
 #Set max table column width and allow text wrapping. 
@@ -55,6 +56,32 @@ FOP = [item.strip() for item in FOP]
 df["DRG Codes"] = code
 df["Federal Capital Payment"] = FCP
 df["Federal Operating Payment"] = FOP
+
+intFCP = []
+
+for element in FCP:
+    x= re.findall(r"\$[^\]]+", element)
+    x = ''.join(x)
+    x = x.replace("$","").replace(",","")
+    intFCP.append(float(x))
+
+intFOP = []
+
+for element in FOP:
+    x= re.findall(r"\$[^\]]+", element)
+    x = ''.join(x)
+    x= x.replace("$","").replace(",","")
+    intFOP.append(float(x))
+    
+
+sum_list = [a + b for a, b in zip(intFCP, intFOP)]
+
+TFP = []
+
+for element in sum_list:
+    TFP.append("${:,.2f}".format(element))
+    
+df["Total Federal Payment"] = TFP
 
 df
 
