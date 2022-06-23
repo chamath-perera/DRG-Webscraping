@@ -61,6 +61,4 @@ df
 #Open the webpage from the URL that has been generated in the build_url function. 
 #for url in urls[:]:
     #webbrowser.open(url,1)
-
-
 # %%
