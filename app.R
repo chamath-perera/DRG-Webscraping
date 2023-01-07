@@ -4,7 +4,7 @@
 #' DRG-Code Web scraper Internal Tool
 #' Version: v0.0.1 (Jan-2023)
 #' Developer: Chamath Perera
-#' License: GNU General Public License v3.0 
+#' License: Creative Commons Attribution-NonCommercial 4.0 International License
 #' Copyright: 2023
 
 #' This is a web-application that will scrape data from Find-a-Code.com, using
