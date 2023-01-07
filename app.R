@@ -13,8 +13,6 @@
 
 #' Both user interface and server scripts will be included in the same R-script.
 
-#' PLEASE DO NOT REDISTRIBUTE SOURCE CODE.
-
 ################################################################################
 
 library(shiny)
