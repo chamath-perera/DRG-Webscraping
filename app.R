@@ -111,8 +111,7 @@ server <- function(input, output) {
   output$DRGtext <- renderDataTable({
     
     datatable(webscrape_DRG(DRGcodes()), extensions = 'Buttons', 
-    options = list(dom = 'Bfrtip',buttons = c('copy', 'csv', 'excel', 'pdf', 'print'))) %>% 
-    formatCurrency(c(2:4), digits = 2)
+    options = list(dom = 'Bfrtip',buttons = c('copy', 'csv', 'excel', 'pdf', 'print')))
   
   })
     
