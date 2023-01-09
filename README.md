@@ -1,4 +1,4 @@
-DRG-Webscraping
+DRG-Code data Web Scraping
 ======================
 
 ### Simple python script to scrape costs from Find-A-Code.
@@ -9,10 +9,21 @@ Run the Webscraping_fn.py script to run the function.
 
 ``` python
 #Function to scrape costs from Find-A-Code.
-
 webscrape_DRG("453","570","946","947", "642", "543", "948")
 
 ```
-# License 
+---
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+## R-code & Shiny
+
+The python code above was replicated in R using the `rvest()` package. Data from the Find-a-Code website is scraped and returned in a table. The purpose of this tool is to automate the data collection process for analysts. 
+
+``` r
+
+    DRG_data <- read_html(URLs_print[i]) %>% 
+      html_nodes('span[class="section_title"]') %>% 
+      html_text(trim = TRUE)
+
+```
+
+The function was also wrapped inside a simple Shiny app for increased accesibility. Use the `app.R` script to access the Shiny app.
