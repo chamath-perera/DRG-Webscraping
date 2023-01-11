@@ -4,7 +4,7 @@
 #' DRG-Code Web scraper Internal Tool
 #' Version: v0.0.1 (Jan-2023)
 #' Developer: Chamath Perera
-#' License: Creative Commons Attribution-NonCommercial 4.0 International License
+#' License: Creative Commons Attribution-Non Commercial 4.0 International License
 #' Copyright: 2023
 
 #' This is a web-application that will scrape data from Find-a-Code.com, using
@@ -21,20 +21,17 @@ library(DT)
 # Define UI for application that draws a histogram
 ui <- fluidPage(
 
-    # Application title
     titlePanel("Find-A-Code Data Scraping Tool"),
     h2(tags$a(href="https://github.com/chamath-perera/DRG-Webscraping", icon("github"))),
     
     br(),
 
-    # Sidebar with a slider input for number of bins 
     sidebarLayout(
         sidebarPanel( width = 4,
           textInput("text", "Add your DRG codes seperated by a comma:", value = "948,812,941,442,869,446,813,392,096"),
           actionButton("bttn", "Return Costs")
         ),
 
-        # Show a plot of the generated distribution
         mainPanel(width = 8,
            DTOutput("DRGtext"),
            tags$head(tags$style("#DRGtext {white-space: pre-wrap; word-break: keep-all; font-size: 12px}")),
@@ -43,13 +40,13 @@ ui <- fluidPage(
     )
 )
 
-# Define server logic required to draw a histogram
+
 server <- function(input, output) {
   
   DRGcodes <- eventReactive(input$bttn, {
     
-    words <- unlist(strsplit(input$text, ",")) # get words separated by ','
-    paste0(words)
+    codes <- unlist(strsplit(input$text, ","))
+    paste0(codes)
     
   })
         webscrape_DRG <- function(DRG) {
@@ -110,8 +107,8 @@ server <- function(input, output) {
         
   output$DRGtext <- renderDataTable({
     
-    datatable(webscrape_DRG(DRGcodes()), extensions = 'Buttons', 
-    options = list(dom = 'Bfrtip',buttons = c('copy', 'csv', 'excel', 'pdf', 'print')))
+    datatable(webscrape_DRG(DRGcodes()), extensions = 'Buttons',
+    options = list(dom = 'Bfrtip',buttons = c('copy', 'csv', 'excel', 'pdf', 'print'), pageLength = 50))
   
   })
     
