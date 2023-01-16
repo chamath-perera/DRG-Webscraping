@@ -20,8 +20,8 @@ The python code above was replicated in R using the `rvest()` package. Data from
 
 ``` r
 
-    DRG_data <- read_html(URLs_print[i]) %>% 
-      html_nodes('span[class="section_title"]') %>% 
+    DRG[i,1] <- read_html(URLs[i]) %>% 
+      html_nodes("h1") %>%
       html_text(trim = TRUE)
 
 ```
