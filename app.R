@@ -18,7 +18,6 @@
 library(shiny)
 library(DT)
 
-# Define UI for application that draws a histogram
 ui <- fluidPage(
 
     titlePanel("Find-A-Code Data Scraping Tool"),
